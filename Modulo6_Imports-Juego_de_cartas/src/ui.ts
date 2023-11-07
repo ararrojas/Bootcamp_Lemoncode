@@ -1,5 +1,5 @@
-import { partida } from './model';
-import { dameCarta, mostrarCarta, mostrarMensaje } from './motor';
+import { partida, puntosAcumulados } from './model';
+import { mostrarCarta, numeroAleatorio, numerosCartas, puntuacionCarta, devolverMensaje } from './motor';
 
 const elementoPuntuacion = document.getElementById('puntuacion');
 const cartaContainer = document.getElementById('cartaInicial');
@@ -8,6 +8,22 @@ const botonPedirCarta = document.getElementById('pedirCarta');
 const botonPlantarse = document.getElementById('plantarse');
 const botonNuevaPartida = document.getElementById('nuevaPartida');
 const botonResultadoContinuar = document.getElementById('resultadoContinuar');
+
+export const dameCarta = () : void => {
+
+    const numero = numeroAleatorio();
+ 
+    const puntuacionCartaValor  = puntuacionCarta(numero);
+     puntosAcumulados(puntuacionCartaValor);
+ 
+     const valorCarta = numerosCartas(numero);
+ 
+     const imagenURL = mostrarCarta(valorCarta);
+     vistaCarta(imagenURL);
+     muestraPuntuacion();
+ 
+     comprobarPartida();
+};
 
 export const muestraPuntuacion = () => {
     
@@ -34,6 +50,11 @@ export const mostrarMensajeResultado = (mensaje:string) => {
     } else {
         console.error('No se puede mostrar mensaje de resultado');
     };
+};
+
+export const mostrarMensaje = (puntuacion: number) => {
+    const mensaje = devolverMensaje(puntuacion);
+    mostrarMensajeResultado(mensaje);
 };
 
 export const eventos = () => {

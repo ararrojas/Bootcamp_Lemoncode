@@ -1,28 +1,8 @@
-import { puntosAcumulados } from './model';
-import { vistaCarta, muestraPuntuacion, mostrarMensajeResultado, comprobarPartida } from './ui'
+export const numeroAleatorio = () => Math.floor(Math.random() * 10) +1;
 
-const numeroAleatorio = () => Math.floor(Math.random() * 10) +1;
+export const numerosCartas = (valor:number) => (valor > 7 ) ? valor + 2 : valor;
 
-const numerosCartas = (valor:number) => (valor > 7 ) ? valor + 2 : valor;
-
-const puntuacionCarta = (valor:number) => (valor <= 7) ? valor : 0.5;
-
-
-export const dameCarta = () : void => {
-
-    const numero = numeroAleatorio();
- 
-    const puntuacionCartaValor  = puntuacionCarta(numero);
-     puntosAcumulados(puntuacionCartaValor);
- 
-     const valorCarta = numerosCartas(numero);
- 
-     const imagenURL = mostrarCarta(valorCarta);
-     vistaCarta(imagenURL);
-     muestraPuntuacion();
- 
-     comprobarPartida();
-};
+export const puntuacionCarta = (valor:number) => (valor <= 7) ? valor : 0.5;
 
 export const mostrarCarta = (numerosCartas:number) : string => {
 
@@ -70,12 +50,7 @@ export const mostrarCarta = (numerosCartas:number) : string => {
     return cartaURL;
 };
 
-export const mostrarMensaje = (puntuacion: number) => {
-    const mensaje = devolverMensaje(puntuacion);
-    mostrarMensajeResultado(mensaje);
-};
-
-const devolverMensaje = (puntuacion: number): string => {
+export const devolverMensaje = (puntuacion: number): string => {
     let mensaje = '';
 
     if (puntuacion <= 4) {
