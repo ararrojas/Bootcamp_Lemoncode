@@ -22,7 +22,17 @@ export const dameCarta = () : void => {
      vistaCarta(imagenURL);
      muestraPuntuacion();
  
-     comprobarPartida();
+     finalizarPartida();
+};
+
+export const finalizarPartida = () => {
+    if(partida.puntuacion === 7.5){
+        mostrarMensaje(partida.puntuacion);
+        desactivarBotones();
+    } else if (partida.puntuacion > 7.5){
+        mostrarMensaje(partida.puntuacion);
+        desactivarBotones();
+    }
 };
 
 export const muestraPuntuacion = () => {
@@ -91,15 +101,6 @@ export const desactivarBotones = () => {
     handleBotonResultadoContinuar(false);
 };
 
-export const comprobarPartida = () => {
-    if(partida.puntuacion === 7.5){
-        mostrarMensaje(partida.puntuacion);
-        desactivarBotones();
-    } else if (partida.puntuacion > 7.5){
-        mostrarMensaje(partida.puntuacion);
-        desactivarBotones();
-    }
-};
 
 const mostrarBotonResultadoContinuar = () => {
 
