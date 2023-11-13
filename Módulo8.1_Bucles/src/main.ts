@@ -80,10 +80,58 @@ const pacientes: Pacientes[] = [
 // Apartado 1
 console.log('------------------- Apartado 1 -------------------');
 
-const obtenPacientesAsignadosAPediatria = (
-    pacientes: Pacientes[]
-  ): Pacientes[] => {
-    // Tu implementación aquí :)
+
+const obtenPacientesAsignadosAPediatria = (pacientes: Pacientes[]): Pacientes[] => {
+  
+  let pacientePed = []
+
+  for(let i = 0; i < pacientes.length; i++){
+    
+    const paciente = pacientes[i];
+    
+    if (paciente.especialidad === 'Pediatra'){
+      pacientePed.push(paciente)
+    }
+  }
+    return pacientePed
   };
 
-console.log(obtenPacientesAsignadosAPediatria);
+console.log(obtenPacientesAsignadosAPediatria(pacientes));
+
+const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (
+  pacientes: Pacientes[]
+): Pacientes[] => {
+  let pacienteInf = []
+
+  for(let i = 0; i < pacientes.length; i++){
+    
+    const paciente = pacientes[i];
+    
+    if (paciente.especialidad === 'Pediatra' && paciente.edad <= 10){
+      pacienteInf.push(paciente)
+    }
+  }
+    return pacienteInf
+};
+
+console.log(obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios(pacientes));
+/* 
+console.log('------------------- Apartado 2 -------------------');
+
+const activarProtocoloUrgencia = (pacientes: Pacientes[]): boolean => {
+  
+  let activarProtocolo = false;
+  
+  for(let i = 0; i < pacientes.length; i++){
+    const paciente = pacientes[i];
+
+    if (paciente.frecuenciaCardiaca > 100 && paciente.temperatura > 39){
+      activarProtocolo = true;
+      console.log(paciente.frecuenciaCardiaca);
+      
+    }
+  }
+  return activarProtocolo
+};
+
+console.log(activarProtocoloUrgencia(pacientes)); */
