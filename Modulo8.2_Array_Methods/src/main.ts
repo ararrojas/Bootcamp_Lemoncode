@@ -77,29 +77,24 @@ const pacientes: Pacientes[] =
   }
 ];
 
+
 console.log('------------------- Apartado 1 - A -------------------');
 
 const obtenPacientesAsignadosAPediatria = (
   pacientes: Pacientes[]
-): Pacientes[] => {
-  
-  const pacientesPediatria = pacientes.filter((paciente) => paciente.especialidad === 'Pediatra');
-
-  return pacientesPediatria
-};
+): Pacientes[] => pacientes.filter((paciente) => paciente.especialidad === 'Pediatra');
 
 console.log(obtenPacientesAsignadosAPediatria(pacientes));
+
 
 console.log('------------------- Apartado 1 - B -------------------');
 
 const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (
   pacientes: Pacientes[]
-): Pacientes[] => {
-  const infante = pacientes.filter((paciente) => paciente.especialidad === 'Pediatra' && paciente.edad < 10);
-  return infante;
-};
+): Pacientes[] => pacientes.filter((paciente) => paciente.especialidad === 'Pediatra' && paciente.edad < 10);
 
 console.log(obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios(pacientes));
+
 
 console.log('------------------- Apartado 2 -------------------');
 
@@ -116,6 +111,7 @@ const activarProtocoloUrgencia = (pacientes: Pacientes[]): boolean => {
 
 console.log(activarProtocoloUrgencia(pacientes));
 
+
 console.log('------------------- Apartado 3 -------------------');
 
 const reasignaPacientesAMedicoFamilia = (
@@ -127,11 +123,13 @@ const reasignaPacientesAMedicoFamilia = (
 
 console.log(reasignaPacientesAMedicoFamilia(pacientes));
 
+
 console.log('------------------- Apartado 4 -------------------');
 
 const HayPacientesDePediatria = (pacientes: Pacientes[]): boolean => pacientes.some((paciente) => paciente.especialidad === 'Pediatra');
 
 console.log(HayPacientesDePediatria(pacientes));
+
 
 console.log('------------------- Apartado 5 -------------------');
 
@@ -162,5 +160,5 @@ const cuentaPacientesPorEspecialidad = (
   )
   return contadorDeEspecialidad;
   };
-  
+
 console.log(cuentaPacientesPorEspecialidad(pacientes));
