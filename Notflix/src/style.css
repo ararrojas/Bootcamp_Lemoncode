@@ -12,15 +12,17 @@ body {
 header {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 50px;
 }
 
 .container-header {
   max-width: 1200px;
+  font-size: 2rem;
   margin: 0 auto;
-  padding:0 20px;
+  padding:0 30px;
   display: flex;
   flex-direction: column;
+  gap:10px;
   justify-content: space-between;
   align-items: center; 
 }
@@ -35,7 +37,8 @@ nav {
 }
 
 nav img {
-  height: 40px;
+  height: 100px;
+  margin-top: 100px;
 }
 
 nav ul {
@@ -48,9 +51,11 @@ nav li {
 }
 
 .hero {
+  margin-top: 80px;
   height: 300px;
   display: flex;
   flex-direction: column;
+  gap: 10px;
   align-items: center;
   color: #ffffff;
 }
@@ -78,10 +83,11 @@ nav li {
 .principal {
  display: flex;
  flex-direction: column;
- gap: 50px;
+ gap: 80px;
  color: #ffffff;
  margin-left: 10px;
  margin-bottom: 50px;
+ font-size: 30px;
 }
 
 .lista-peliculas {
@@ -115,7 +121,7 @@ nav li {
 }
 
 .pelicula h3 {
- font-size: 18px;
+ font-size: 25px;
  margin-top: 10px;
 }
 
