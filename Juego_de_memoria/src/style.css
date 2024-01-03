@@ -1,0 +1,48 @@
+body{
+  height: 100vh;
+  background: #000;
+}
+
+.tablero{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  margin: 150px auto;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 20px;
+  background: hotpink;
+  width: 70vh;
+  height: 70vh;
+}
+
+.carta_contenedor{
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  margin-top: auto;
+}
+
+.carta {
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.animalito{
+  width: 200px;
+  height: 200px;
+  margin-top: 65px;
+  margin-left: 20px;
+}
+
+.rotate {
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+  transition: all 0.5s linear;
+}
