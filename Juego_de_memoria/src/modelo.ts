@@ -1,4 +1,4 @@
-import { shuffleArray } from "./motor";
+import { barajarCartas } from "./motor";
 
 export interface Carta {
     idFoto: number;
@@ -37,7 +37,7 @@ const infoCartas: InfoCarta[] = [
         idFoto: 6,
         imagen: 'https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/memo/6.png'
     }
-  ];
+];
 
 const crearCartaInicial = (idFoto:number, imagen:string): Carta => ({
     idFoto,
@@ -56,7 +56,7 @@ const crearColeccionDeCartasInicial = (infoCartas: InfoCarta[]): Carta[] => {
 
         cartasIniciales.push(carta1, carta2)
     });
-    shuffleArray(cartasIniciales);
+    barajarCartas(cartasIniciales);
 
     return cartasIniciales;
 };
@@ -69,3 +69,17 @@ type EstadoPartida =
   | "UnaCartaLevantada"
   | "DosCartasLevantadas"
   | "PartidaCompleta";
+
+export interface Tablero {
+    cartas: Carta[];
+    estadoPartida: EstadoPartida;
+    indiceCartaVolteadaA?: number;
+    indiceCartaVolteadaB?: number;
+};
+
+const crearTableroInicial = (): Tablero => ({
+    cartas: cartas,
+    estadoPartida: 'PartidaNoIniciada'
+})
+
+export let tablero: Tablero = crearTableroInicial();
